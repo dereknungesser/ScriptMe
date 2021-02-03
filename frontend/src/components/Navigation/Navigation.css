@@ -1,3 +1,35 @@
 .profile-dropdown {
   position: absolute;
 }
+
+.navbar_container {
+  height: 76px;
+  width: auto;
+  background-color: #34434E;
+  border-radius: 10px;
+  border: 2px solid #AAB2BC
+}
+
+.navbar_buttons__container {
+  display: flex;
+  justify-content: flex-end;
+  margin-right: 15px;
+}
+
+.navbar_buttons {
+  text-decoration: none;
+  background-color: #F6F6FC;
+  border: none;
+  color: black;
+  font-family: 'Courier New', Courier, monospace;
+  text-align: center;
+  font-size: 16px;
+  margin: 4px;
+  cursor: pointer;
+  display: inline;
+  padding: 10px;
+}
+
+.navbar_buttons:hover {
+  background-color: #d7d7db;
+}

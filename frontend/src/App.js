@@ -5,6 +5,7 @@ import SignupFormPage from "./components/SignupFormPage";
 // import LoginFormPage from "./components/LoginFormPage";
 import * as sessionActions from "./store/session";
 import Navigation from "./components/Navigation";
+import TextEditor from "./components/TextEditor/TextEditor"
 
 function App() {
   const dispatch = useDispatch();
@@ -17,14 +18,17 @@ function App() {
     <>
       <Navigation isLoaded={isLoaded} />
       {isLoaded && (
-        <Switch>
-          {/* <Route path="/login" >
-            <LoginFormPage />
-          </Route> */}
-          <Route path="/signup">
-            <SignupFormPage />
-          </Route>
-        </Switch>
+          <Switch>
+            <Switch>
+              <TextEditor />
+            </Switch>
+            {/* <Route path="/login" >
+              <LoginFormPage />
+            </Route> */}
+            <Route path="/signup">
+              <SignupFormPage />
+            </Route>
+          </Switch>
       )}
     </>
   );
