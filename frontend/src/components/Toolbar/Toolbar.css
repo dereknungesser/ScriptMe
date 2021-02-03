@@ -1,0 +1,39 @@
+.toolbar {
+    display: flex;
+    align-content: center;
+    margin: 10px;
+    border: solid 1px #ddd;
+    background:#f4f4f4;
+    padding: 5px;
+    border-radius:3px;
+    width: 33.4vh;
+}
+
+.bold {
+    font-weight: bold;
+}
+.italic {
+    font-style: italic;
+}
+.underline {
+    text-decoration: underline;
+}
+
+.toolbar button {
+    background-color: #F6F6FC;
+    border: 1px solid black;
+    color: black;
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: center;
+    font-size: 16px;
+    margin-right: 3px;
+    cursor: pointer;
+    display: inline;
+}
+.toolbar button:hover {
+    background-color: #d7d7db;
+}
+
+.hidden {
+    display: none;
+}

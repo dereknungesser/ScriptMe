@@ -14,5 +14,13 @@
   },
   "keywords": [],
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "@ckeditor/ckeditor5-build-classic": "^25.0.0",
+    "@ckeditor/ckeditor5-react": "^3.0.0",
+    "react": "^16.14.0",
+    "react-dom": "^16.14.0",
+    "slate": "^0.59.0",
+    "slate-react": "^0.59.0"
+  }
 }
