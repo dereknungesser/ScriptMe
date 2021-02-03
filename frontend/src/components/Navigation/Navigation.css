@@ -6,7 +6,8 @@
   height: 76px;
   width: auto;
   background-color: #34434E;
-  border-radius: 10px;
+  border-top-right-radius: 10px;
+  border-top-left-radius: 10px;
   border: 2px solid #AAB2BC
 }
 
@@ -31,5 +32,32 @@
 }
 
 .navbar_buttons:hover {
+  background-color: #d7d7db;
+}
+
+.navbar_links {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  padding: 30px;
+  border: 3px solid black;
+  width: 500px;
+}
+
+.navbar_links > .link_button {
+  text-decoration: none;
+  background-color: #F6F6FC;
+  border: none;
+  color: black;
+  font-family: 'Courier New', Courier, monospace;
+  text-align: center;
+  font-size: 16px;
+  margin: 4px;
+  cursor: pointer;
+  display: inline;
+  padding: 10px;
+}
+
+.navbar_links > .link_button:hover {
   background-color: #d7d7db;
 }

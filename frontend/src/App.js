@@ -6,6 +6,7 @@ import SignupFormPage from "./components/SignupFormPage";
 import * as sessionActions from "./store/session";
 import Navigation from "./components/Navigation";
 import TextEditor from "./components/TextEditor/TextEditor"
+import Homeview from "./components/Homeview/Homeview"
 
 function App() {
   const dispatch = useDispatch();
@@ -19,14 +20,23 @@ function App() {
       <Navigation isLoaded={isLoaded} />
       {isLoaded && (
           <Switch>
-            <Switch>
+            <Route path="/texteditor">
               <TextEditor />
-            </Switch>
-            {/* <Route path="/login" >
-              <LoginFormPage />
-            </Route> */}
+            </Route>
+            <Route path="/characters">
+              <h1>CHARACTER GENERATOR</h1>
+            </Route>
+            <Route path="/documents">
+              <h1>MY DOCUMENTS</h1>
+            </Route>
+            <Route path="/ideas">
+              <h1>IDEAS WEB</h1>
+            </Route>
             <Route path="/signup">
               <SignupFormPage />
+            </Route>
+            <Route path="/">
+              <Homeview />
             </Route>
           </Switch>
       )}
