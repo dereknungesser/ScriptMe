@@ -1,11 +1,12 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useHistory } from "react-router-dom";
 import './Projects.css';
 import { addProject } from "../../store/project"
+import * as projectActions from "../../store/project"
 
 
-function Projects() {
+function Projects(project) {
     const projects = useSelector((state) => state.project);
     const userId = useSelector((state) => state.session.user.id);
 
@@ -13,19 +14,31 @@ function Projects() {
 
     const [project_name, setProject_Name] = useState("");
     const history = useHistory();
+    const [loaded, setLoaded] = useState(true);
+    const [projectList, setProject] = useState(project.project_name);
+
+    useEffect(() => {
+        (async () => {
+          setLoaded(false);
+          let res = await fetch(`/api/projects`);
+          res = await res.json();
+          console.log(res)
+          setLoaded(true);
+        })();
+      }, []);
 
     const handleSubmit = (e) => {
-    e.preventDefault();
+        e.preventDefault();
 
-    const payload = {
-        userId,
-        project_name
-    };
-    console.log("PAYLOAD", payload);
-    const createdProject = dispatch(addProject(payload));
-    console.log(createdProject)
-
-    if (createdProject) history.push("/projects");
+        const payload = {
+            userId,
+            project_name
+        };
+        console.log("PAYLOAD", payload);
+        const createdProject = dispatch(addProject(payload));
+        console.log("FNNFSKDJNFKNFDKDJNFKSDNJKNJNFNS", createdProject)
+        setProject(createdProject)
+        if (createdProject) history.push("/documents");
     };
 
     return (
@@ -40,7 +53,7 @@ function Projects() {
                 <button className="new_project_button">New Project</button>
             </form>
             <div>
-                {projects}
+                <h1>{projectList}</h1>
             </div>
         </div>
     )
