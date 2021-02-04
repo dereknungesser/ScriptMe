@@ -1,11 +1,17 @@
 import {fetch} from './csrf.js'
 
-const ADD_PROJECT = 'recipes/ADD_PROJECT'
+const ADD_PROJECT = 'project/ADD_PROJECT'
+const GET_PROJECT = 'project/GET_PROJECT'
 
 const addNewProject = project => ({
-    type: ADD_PROJECT,
-    payload: project
-  });
+  type: ADD_PROJECT,
+  payload: project
+});
+
+const getAllProjects = projectList => ({
+  type: GET_PROJECT,
+  payload: projectList
+})
 
 
 export const addProject = ({ userId, project_name }) => async (dispatch) => {
@@ -18,12 +24,19 @@ export const addProject = ({ userId, project_name }) => async (dispatch) => {
             userId,
             project_name })
     });
-    dispatch(addNewProject(res.data))
+      dispatch(addNewProject(res.data))
     return {type: ADD_PROJECT, payload: res.data}
 }
 
+export const getProject = () => async (dispatch) => {
+  let res = await fetch(`/api/projects`);
+  console.log(res.data)
+  dispatch(getAllProjects(res.data))
+  return res
+}
 
-const initialState = { user: null };
+
+const initialState = { project: null };
 
 function reducer(state = initialState, action) {
   let newState;

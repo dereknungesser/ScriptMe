@@ -15,11 +15,9 @@ module.exports = {
       },
       document_name: {
         type: Sequelize.STRING,
-        allowNull: false
       },
       document_body: {
         type: Sequelize.STRING,
-        allowNull: false
       },
       projectId: {
         type: Sequelize.INTEGER,
