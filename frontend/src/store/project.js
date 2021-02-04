@@ -1,14 +1,14 @@
 import {fetch} from './csrf.js'
 
-const ADD_POST = 'recipes/ADD_POST'
+const ADD_PROJECT = 'recipes/ADD_PROJECT'
 
-const addNewRecipe = recipe => ({
-    type: ADD_POST,
-    payload: recipe,
+const addNewProject = project => ({
+    type: ADD_PROJECT,
+    payload: project
   });
 
 
-export const addRecipe = ({ userId, dish_name, ingredients, instructions, photoUrl }) => async (dispatch) => {
+export const addProject = ({ userId, project_name }) => async (dispatch) => {
   const res = await fetch('/api/projects', {
         method: 'POST',
         headers: {
@@ -16,13 +16,10 @@ export const addRecipe = ({ userId, dish_name, ingredients, instructions, photoU
         },
         body: JSON.stringify({
             userId,
-            dish_name,
-            ingredients,
-            instructions,
-            photoUrl })
+            project_name })
     });
-    dispatch(addNewRecipe(res.data))
-    return {type: ADD_POST, payload: res.data}
+    dispatch(addNewProject(res.data))
+    return {type: ADD_PROJECT, payload: res.data}
 }
 
 
@@ -31,8 +28,8 @@ const initialState = { user: null };
 function reducer(state = initialState, action) {
   let newState;
   switch (action.type) {
-    case ADD_POST:
-      newState = Object.assign({}, state, { recipe: action.payload });
+    case ADD_PROJECT:
+      newState = Object.assign({}, state, { project: action.payload });
       return newState;
     default:
       return state;

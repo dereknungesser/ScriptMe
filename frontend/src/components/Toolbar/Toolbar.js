@@ -26,7 +26,8 @@ function Toolbar() {
     const payload = {
         userId,
         document_name,
-        document_body
+        document_body,
+        // documentId
     };
     const response = await fetch(`/api/documents`, {
       method: 'POST',

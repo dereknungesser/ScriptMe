@@ -9,7 +9,7 @@ module.exports = (sequelize, DataTypes) => {
     imageUrl: DataTypes.STRING
   }, {});
   Character.associate = function(models) {
-    Character.belongsTo(models.User, { foreignKey: "userId" })
+    Character.belongsTo(models.User, { foreignKey: "userId" });
   };
   return Character;
 };

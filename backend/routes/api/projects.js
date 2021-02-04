@@ -2,14 +2,14 @@ const express = require('express');
 const router = express.Router();
 const { restoreUser } = require('../../utils/auth');
 
-const { Document, User } = require('../../db/models')
+const { Project, User } = require('../../db/models')
 
 router.post('/', restoreUser, async (req, res, next) => {
-    const { userId, document_name, document_body } = req.body
+    const { userId, project_name } = req.body
     try {
-      const document = await Document.create({userId, document_name, document_body})
-      const newDocument = await Document.findByPk(document.id, {include: [User]})
-      res.json(newDocument)
+      const project = await Project.create({userId, project_name })
+      const newProject = await Project.findByPk(project.id, {include: [User]})
+      res.json(newProject)
     } catch (e) {
       next(e)
     }
@@ -17,11 +17,11 @@ router.post('/', restoreUser, async (req, res, next) => {
 
 router.get('/', async (req, res, next) => {
   try {
-    const document = await Document.findAll({
+    const project = await Project.findAll({
       include: [User]
     })
-    console.log(document)
-    res.json({document: document});
+    console.log(project)
+    res.json({project: project});
   } catch (e) {
     next(e);
   };

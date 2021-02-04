@@ -7,6 +7,7 @@ import * as sessionActions from "./store/session";
 import Navigation from "./components/Navigation";
 import TextEditor from "./components/TextEditor/TextEditor"
 import Homeview from "./components/Homeview/Homeview"
+import Projects from "./components/Projects/Projects"
 import CharacterGenerator from "./components/CharacterGenerator/CharacterGenerator"
 
 function App() {
@@ -28,7 +29,7 @@ function App() {
               <CharacterGenerator />
             </Route>
             <Route path="/documents">
-              <h1>MY DOCUMENTS</h1>
+              <Projects />
             </Route>
             <Route path="/ideas">
               <h1>IDEAS WEB</h1>
