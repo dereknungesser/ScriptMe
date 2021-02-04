@@ -1,6 +1,8 @@
 import React from 'react';
 import Toolbar from '../Toolbar/Toolbar';
 import './TextEditor.css';
+
+
 export default function Editor() {
 
 function paste(e) {

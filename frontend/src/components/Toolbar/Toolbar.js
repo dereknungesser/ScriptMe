@@ -1,4 +1,6 @@
 import React from 'react'
+import Cookies from 'js-cookie';
+import { useSelector } from 'react-redux';
 import './Toolbar.css'
 
 
@@ -16,15 +18,29 @@ function Toolbar() {
     );
   }
 
-  function handleSave() {
-    const content = document.getElementById("editor").innerHTML;
-    const title = document.getElementById("title").textContent;
-    const post = {
-        title,
-        content
+  const userId = useSelector((state) => state.session.user.id)
+
+  async function handleSave() {
+    const document_body = document.getElementById("editor").innerHTML;
+    const document_name = document.getElementById("title").textContent;
+    const payload = {
+        userId,
+        document_name,
+        document_body
     };
-    console.log(post);
-    //add POST request here...
+    const response = await fetch(`/api/documents`, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        'XSRF-Token': Cookies.get('XSRF-TOKEN')
+      },
+      body: JSON.stringify(payload),
+    });
+
+    if(response.ok){
+      const message = await response.json()
+      return message
+    }
   }
 
   return (

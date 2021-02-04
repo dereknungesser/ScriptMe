@@ -7,6 +7,7 @@ import * as sessionActions from "./store/session";
 import Navigation from "./components/Navigation";
 import TextEditor from "./components/TextEditor/TextEditor"
 import Homeview from "./components/Homeview/Homeview"
+import CharacterGenerator from "./components/CharacterGenerator/CharacterGenerator"
 
 function App() {
   const dispatch = useDispatch();
@@ -24,7 +25,7 @@ function App() {
               <TextEditor />
             </Route>
             <Route path="/characters">
-              <h1>CHARACTER GENERATOR</h1>
+              <CharacterGenerator />
             </Route>
             <Route path="/documents">
               <h1>MY DOCUMENTS</h1>
