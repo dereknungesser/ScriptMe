@@ -39,9 +39,8 @@
   display: flex;
   justify-content: center;
   align-content: center;
-  padding: 30px;
+  width: auto;
   border: 3px solid black;
-  width: 500px;
 }
 
 .navbar_links > .link_button {
