@@ -4,11 +4,11 @@ module.exports = (sequelize, DataTypes) => {
     userId: DataTypes.INTEGER,
     document_name: DataTypes.STRING,
     document_body: DataTypes.STRING,
-    documentId: DataTypes.INTEGER
+    projectId: DataTypes.INTEGER
   }, {});
   Document.associate = function(models) {
-    Document.belongsTo(models.User, { foreignKey: "userId" })
-    Document.belongsTo(models.Project, { foreignKey: "documentId" })
+    Document.belongsTo(models.User, { foreignKey: "userId" });
+    Document.belongsTo(models.Project, { foreignKey: "projectId" });
   };
   return Document;
 };

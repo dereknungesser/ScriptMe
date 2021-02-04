@@ -10,7 +10,8 @@ module.exports = {
       },
       userId: {
         type: Sequelize.INTEGER,
-        allowNull: false
+        allowNull: false,
+        references: { model: "Users" }
       },
       document_name: {
         type: Sequelize.STRING,
@@ -20,7 +21,7 @@ module.exports = {
         type: Sequelize.STRING,
         allowNull: false
       },
-      documentId: {
+      projectId: {
         type: Sequelize.INTEGER,
         allowNull: false,
         references: { model: "Projects" }
