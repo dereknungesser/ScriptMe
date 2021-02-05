@@ -6,8 +6,8 @@ import { addProject } from "../../store/project"
 import * as projectActions from "../../store/project"
 
 
-function Projects(project) {
-    const projects = useSelector((state) => state.project);
+function Projects({project}) {
+    const projects = useSelector((action) => action.payload);
     const userId = useSelector((state) => state.session.user.id);
 
     const dispatch = useDispatch()
@@ -15,7 +15,6 @@ function Projects(project) {
     const [project_name, setProject_Name] = useState("");
     const history = useHistory();
     const [loaded, setLoaded] = useState(true);
-    const [projectList, setProject] = useState(project.project_name);
 
     useEffect(() => {
         (async () => {
@@ -37,10 +36,9 @@ function Projects(project) {
         console.log("PAYLOAD", payload);
         const createdProject = dispatch(addProject(payload));
         console.log("FNNFSKDJNFKNFDKDJNFKSDNJKNJNFNS", createdProject)
-        setProject(createdProject)
         if (createdProject) history.push("/documents");
     };
-
+console.log(projects)
     return (
         <div>
             <form onSubmit={handleSubmit}>
@@ -53,7 +51,7 @@ function Projects(project) {
                 <button className="new_project_button">New Project</button>
             </form>
             <div>
-                <h1>{projectList}</h1>
+                <h1>{projects}</h1>
             </div>
         </div>
     )
