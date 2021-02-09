@@ -47,8 +47,8 @@ console.log("NAME:", projects)
             <div>
                 {(projects.map((project) => (
                         <div>
-                        {project}
-                        myUserId={userId}
+                            {project}
+                            myUserId={userId}
                         </div>
                     ))
                 )}
