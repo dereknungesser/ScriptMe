@@ -3,12 +3,12 @@ import {fetch} from './csrf.js'
 const SAVE_CHARACTER = 'characters/SAVE_CHARACTER'
 const GET_CHARACTER = 'characters/GET_CHARACTER'
 
-const addNewProject = character => ({
+const addNewCharacter = character => ({
   type: SAVE_CHARACTER,
   payload: character
 });
 
-const getAllProjects = characterList => ({
+const getAllCharacters = characterList => ({
   type: GET_CHARACTER,
   payload: characterList
 })
@@ -28,14 +28,14 @@ export const saveCharacters = ({ userId, name, age, location, bio, imageUrl }) =
             bio,
             imageUrl })
     });
-      dispatch(addNewProject(res.data))
+      dispatch(addNewCharacter(res.data))
     return {type: SAVE_CHARACTER, payload: res.data}
 }
 
-export const getProject = () => async (dispatch) => {
+export const getCharacters = () => async (dispatch) => {
   let res = await fetch(`/api/characters`);
   console.log(res.data)
-  dispatch(getAllProjects(res.data))
+  dispatch(getAllCharacters(res.data))
   return res
 }
 
@@ -46,6 +46,9 @@ function reducer(state = initialState, action) {
   let newState;
   switch (action.type) {
     case SAVE_CHARACTER:
+      newState = Object.assign({}, state, { character: action.payload });
+      return newState;
+    case GET_CHARACTER:
       newState = Object.assign({}, state, { character: action.payload });
       return newState;
     default:
