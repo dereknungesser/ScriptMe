@@ -30,8 +30,8 @@ export const addProject = ({ userId, project_name }) => async (dispatch) => {
 
 export const getProject = () => async (dispatch) => {
   let res = await fetch(`/api/projects`);
-  console.log(res.data)
-  dispatch(getAllProjects(res.data))
+  console.log(res.data.project)
+  dispatch(getAllProjects(res.data.project))
   return res
 }
 
@@ -44,6 +44,9 @@ function reducer(state = initialState, action) {
     case ADD_PROJECT:
       newState = Object.assign({}, state, { project: action.payload });
       return newState;
+    case GET_PROJECT:
+      newState = Object.assign({}, state, { project: action.payload })
+      return newState
     default:
       return state;
     }

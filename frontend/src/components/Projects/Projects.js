@@ -2,12 +2,12 @@ import React, { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useHistory } from "react-router-dom";
 import './Projects.css';
-import { addProject } from "../../store/project"
+import { addProject, getProject } from "../../store/project"
 import * as projectActions from "../../store/project"
 
 
-function Projects({project}) {
-    const projects = useSelector((action) => action.payload);
+function Projects({children}) {
+    const projects = useSelector((state) => state.project.project);
     const userId = useSelector((state) => state.session.user.id);
 
     const dispatch = useDispatch()
@@ -17,14 +17,8 @@ function Projects({project}) {
     const [loaded, setLoaded] = useState(true);
 
     useEffect(() => {
-        (async () => {
-          setLoaded(false);
-          let res = await fetch(`/api/projects`);
-          res = await res.json();
-          console.log(res)
-          setLoaded(true);
-        })();
-      }, []);
+        dispatch(getProject());
+    }, [dispatch])
 
     const handleSubmit = (e) => {
         e.preventDefault();
@@ -38,7 +32,7 @@ function Projects({project}) {
         console.log("FNNFSKDJNFKNFDKDJNFKSDNJKNJNFNS", createdProject)
         if (createdProject) history.push("/documents");
     };
-console.log(projects)
+console.log("NAME:", projects)
     return (
         <div>
             <form onSubmit={handleSubmit}>
@@ -51,7 +45,13 @@ console.log(projects)
                 <button className="new_project_button">New Project</button>
             </form>
             <div>
-                <h1>{projects}</h1>
+                {(projects.map((project) => (
+                        <div>
+                        {project}
+                        myUserId={userId}
+                        </div>
+                    ))
+                )}
             </div>
         </div>
     )
