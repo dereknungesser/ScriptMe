@@ -6,7 +6,7 @@ import { addProject, getProject } from "../../store/project"
 import * as projectActions from "../../store/project"
 
 
-function Projects({children}) {
+function Projects() {
     const projects = useSelector((state) => state.project.project);
     const userId = useSelector((state) => state.session.user.id);
 

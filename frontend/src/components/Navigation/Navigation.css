@@ -39,8 +39,9 @@
   display: flex;
   justify-content: center;
   align-content: center;
-  width: auto;
-  border: 3px solid black;
+  width: 75vh;
+  border: 2px solid #AAB2BC;
+  background-color: #34434E;
 }
 
 .navbar_links > .link_button {

@@ -24,18 +24,20 @@ function Navigation({ isLoaded }){
 
   if (sessionUser) {
     return (
-      <div className="navbar_container">
-          <div className="navbar_buttons__container">
-            <NavLink className="navbar_buttons" exact to="/">Home</NavLink>
-            {isLoaded && sessionLinks}
-          </div>
-          <div className="navbar_links">
-            <NavLink className="link_button" exact to="/texteditor">Write</NavLink>
-            <NavLink className="link_button" exact to="/characters">Character Generator</NavLink>
-            <NavLink className="link_button" exact to="/documents">MyDocuments</NavLink>
-            <NavLink className="link_button" exact to="/ideas">Ideas Web</NavLink>
-          </div>
-      </div>
+      <>
+        <div className="navbar_container">
+            <div className="navbar_buttons__container">
+              <NavLink className="navbar_buttons" exact to="/">Home</NavLink>
+              {isLoaded && sessionLinks}
+            </div>
+        </div>
+        <div className="navbar_links">
+          <NavLink className="link_button" exact to="/texteditor">Write</NavLink>
+          <NavLink className="link_button" exact to="/characters">Character Generator</NavLink>
+          <NavLink className="link_button" exact to="/documents">MyDocuments</NavLink>
+          <NavLink className="link_button" exact to="/ideas">Ideas Web</NavLink>
+        </div>
+      </>
     )
   } else {
     return (
