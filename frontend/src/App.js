@@ -9,6 +9,7 @@ import TextEditor from "./components/TextEditor/TextEditor"
 import Homeview from "./components/Homeview/Homeview"
 import Projects from "./components/Projects/Projects"
 import CharacterGenerator from "./components/CharacterGenerator/CharacterGenerator"
+import IdeasWeb from "./components/IdeasWeb/IdeasWeb"
 
 function App() {
   const dispatch = useDispatch();
@@ -32,7 +33,7 @@ function App() {
               <Projects />
             </Route>
             <Route path="/ideas">
-              <h1>IDEAS WEB</h1>
+              <IdeasWeb />
             </Route>
             <Route path="/signup">
               <SignupFormPage />
