@@ -1,0 +1,42 @@
+.each-project {
+    color:blanchedalmond;
+    border: 1px solid whitesmoke;
+    padding: 5px;
+    width: 50%;
+    font-size: 22px;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+.project-container {
+    margin-top: 50px;
+}
+
+.new_project {
+    margin-top: 50px;
+    margin-left: 50px;
+}
+
+.new_project_input {
+    height: 30px;
+    width: 300px;
+    font-size: 22px;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+.new_project_button {
+    text-decoration: none;
+    background-color: #F6F6FC;
+    border: none;
+    color: black;
+    font-family: 'Courier New', Courier, monospace;
+    text-align: center;
+    font-size: 16px;
+    margin: 4px;
+    cursor: pointer;
+    display: inline;
+    padding: 10px;
+  }
+
+  .new_project_button:hover {
+    background-color: #d7d7db;
+  }

@@ -18,6 +18,7 @@ function Projects() {
 
     useEffect(() => {
         dispatch(getProject());
+        setLoaded()
     }, [dispatch])
 
     const handleSubmit = (e) => {
@@ -32,10 +33,12 @@ function Projects() {
         console.log("FNNFSKDJNFKNFDKDJNFKSDNJKNJNFNS", createdProject)
         if (createdProject) history.push("/documents");
     };
+
 console.log("NAME:", projects)
-    return (
+
+    return (loaded &&
         <div>
-            <form onSubmit={handleSubmit}>
+            <form onSubmit={handleSubmit} className="new_project">
                 <input
                 onChange={(e) => {
                     setProject_Name(e.target.value);
@@ -44,11 +47,10 @@ console.log("NAME:", projects)
                 className="new_project_input" />
                 <button className="new_project_button">New Project</button>
             </form>
-            <div>
-                {(projects.map((project) => (
-                        <div>
-                            {project}
-                            myUserId={userId}
+            <div className="project-container">
+                {(projects.map(({project_name}) => (
+                        <div className="each-project">
+                            {project_name}
                         </div>
                     ))
                 )}

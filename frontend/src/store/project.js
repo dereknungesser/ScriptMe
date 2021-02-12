@@ -8,9 +8,9 @@ const addNewProject = project => ({
   payload: project
 });
 
-const getAllProjects = projectList => ({
+const getAllProjects = project => ({
   type: GET_PROJECT,
-  payload: projectList
+  payload: project
 })
 
 
@@ -24,15 +24,13 @@ export const addProject = ({ userId, project_name }) => async (dispatch) => {
             userId,
             project_name })
     });
-      dispatch(addNewProject(res.data))
-    return {type: ADD_PROJECT, payload: res.data}
+    return dispatch(addNewProject(res.data))
+    // return {type: ADD_PROJECT, payload: res.data}
 }
 
 export const getProject = () => async (dispatch) => {
   let res = await fetch(`/api/projects`);
-  console.log(res.data.project)
-  dispatch(getAllProjects(res.data.project))
-  return res
+  return dispatch(getAllProjects(res.data))
 }
 
 
