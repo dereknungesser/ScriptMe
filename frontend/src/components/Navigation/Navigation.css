@@ -17,11 +17,19 @@
   margin-right: 15px;
 }
 
+h2 {
+  margin-right: 100px;
+  color: ghostwhite;
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 22px;
+}
+
 .navbar_buttons {
   text-decoration: none;
   background-color: #F6F6FC;
   border: none;
   color: black;
+  height: 15px;
   font-family: 'Courier New', Courier, monospace;
   text-align: center;
   font-size: 16px;
@@ -60,4 +68,9 @@
 
 .navbar_links > .link_button:hover {
   background-color: #d7d7db;
+}
+
+.profile {
+  height: 25px;
+  margin-top: 7.5px;
 }

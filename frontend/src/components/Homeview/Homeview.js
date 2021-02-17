@@ -9,7 +9,7 @@ function Homeview() {
 
     if (sessionUser) {
         return (
-            <h1>Let's Start a new project!</h1>
+            <h1 className="title">Let's Start a new project!</h1>
         )
     } else {
         return(

@@ -49,7 +49,6 @@ function Toolbar() {
       <button className="bold" onClick={e => format('bold')}>B</button>
       <button className="italic" onClick={() => format('italic')}>I</button>
       <button className="underline" onClick={() => format('underline')}>U</button>
-      <button className="list" onClick={() => format('insertUnorderedList')}>List</button>
       <button className="header" onClick={() => setHeader()}>Header</button>
       <button className="save" onClick={() => handleSave()}>Save</button>
     </div>

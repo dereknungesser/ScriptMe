@@ -1,0 +1,24 @@
+.tag {
+    color: ghostwhite;
+}
+
+.character-image {
+    width: 250px;
+    height: auto;
+}
+
+td {
+    border: 1px solid ghostwhite;
+    padding: 15px;
+    color: ghostwhite;
+    background-color: #34434E;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+.character-table {
+    margin-top: 25px;
+}
+
+.title {
+    margin-top: 100px;
+}

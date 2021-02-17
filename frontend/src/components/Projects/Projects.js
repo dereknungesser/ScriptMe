@@ -36,7 +36,7 @@ function Projects() {
 
 console.log("NAME:", projects)
 
-    return (loaded &&
+    return (
         <div>
             <form onSubmit={handleSubmit} className="new_project">
                 <input
@@ -47,14 +47,14 @@ console.log("NAME:", projects)
                 className="new_project_input" />
                 <button className="new_project_button">New Project</button>
             </form>
-            <div className="project-container">
+            {/* <div className="project-container">
                 {(projects.map(({project_name}) => (
                         <div className="each-project">
                             {project_name}
                         </div>
                     ))
                 )}
-            </div>
+            </div> */}
         </div>
     )
 };

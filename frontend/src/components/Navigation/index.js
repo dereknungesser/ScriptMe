@@ -27,6 +27,7 @@ function Navigation({ isLoaded }){
       <>
         <div className="navbar_container">
             <div className="navbar_buttons__container">
+              <h2>ScriptMe</h2>
               <NavLink className="navbar_buttons" exact to="/">Home</NavLink>
               {isLoaded && sessionLinks}
             </div>
