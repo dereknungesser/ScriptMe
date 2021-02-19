@@ -4,10 +4,11 @@ import { useHistory } from "react-router-dom";
 import './Projects.css';
 import { addProject, getProject } from "../../store/project"
 import * as projectActions from "../../store/project"
+import { restoreUser } from "../../store/session"
 
 
 function Projects() {
-    const projects = useSelector((state) => state.project.project);
+    const projects = useSelector((state) => state.project.project.project);
     const userId = useSelector((state) => state.session.user.id);
 
     const dispatch = useDispatch()
@@ -18,25 +19,23 @@ function Projects() {
 
     useEffect(() => {
         dispatch(getProject());
-        setLoaded()
     }, [dispatch])
 
     const handleSubmit = (e) => {
         e.preventDefault();
-
         const payload = {
             userId,
             project_name
         };
         console.log("PAYLOAD", payload);
         const createdProject = dispatch(addProject(payload));
-        console.log("FNNFSKDJNFKNFDKDJNFKSDNJKNJNFNS", createdProject)
         if (createdProject) history.push("/documents");
+        window.location.reload();
     };
 
 console.log("NAME:", projects)
 
-    return (
+    return loaded && (
         <div>
             <form onSubmit={handleSubmit} className="new_project">
                 <input
@@ -47,14 +46,14 @@ console.log("NAME:", projects)
                 className="new_project_input" />
                 <button className="new_project_button">New Project</button>
             </form>
-            {/* <div className="project-container">
-                {(projects.map(({project_name}) => (
+            <div className="project-container">
+                {projects && (projects.map(({project_name}) => (
                         <div className="each-project">
                             {project_name}
                         </div>
                     ))
                 )}
-            </div> */}
+            </div>
         </div>
     )
 };

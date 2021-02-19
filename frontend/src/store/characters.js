@@ -40,7 +40,7 @@ export const getCharacters = () => async (dispatch) => {
 }
 
 
-const initialState = { character: null };
+const initialState = { characters: {} };
 
 function reducer(state = initialState, action) {
   let newState;

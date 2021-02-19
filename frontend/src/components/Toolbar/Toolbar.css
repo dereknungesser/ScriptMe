@@ -18,7 +18,9 @@
 .underline {
     text-decoration: underline;
 }
-
+.editor > h2 {
+    color: black;
+}
 .toolbar button {
     background-color: #F6F6FC;
     border: 1px solid black;

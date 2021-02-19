@@ -22,6 +22,7 @@ function CharacterGenerator() {
     const [bio, setBio] = useState("");
     const [imageUrl, setImageUrl] = useState("");
 
+
     const handleSubmit = async (e) => {
       e.preventDefault();
 

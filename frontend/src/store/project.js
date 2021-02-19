@@ -24,17 +24,18 @@ export const addProject = ({ userId, project_name }) => async (dispatch) => {
             userId,
             project_name })
     });
-    return dispatch(addNewProject(res.data))
-    // return {type: ADD_PROJECT, payload: res.data}
+    dispatch(addNewProject(res.data))
+    return res;
 }
 
 export const getProject = () => async (dispatch) => {
-  let res = await fetch(`/api/projects`);
-  return dispatch(getAllProjects(res.data))
+  const res = await fetch(`/api/projects`);
+  dispatch(getAllProjects(res.data))
+  return res.data
 }
 
 
-const initialState = { project: null };
+const initialState = { project: {} };
 
 function reducer(state = initialState, action) {
   let newState;
