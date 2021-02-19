@@ -1,5 +1,5 @@
 import React from "react";
-import { Draggable } from 'react-beautiful-dnd';
+import { Draggable, DragDropContext, Droppable } from 'react-beautiful-dnd';
 import './IdeasWeb.css';
 
 function IdeasWeb() {
@@ -15,9 +15,15 @@ function IdeasWeb() {
                 </form>
             </div>
             <div className="drag-and-drop">
-
-                    <li>Idea1</li>
-
+                <DragDropContext onDragEnd={(result) => console.log(result)}>
+                <Droppable droppableId="outer">
+                    {(provided) => <div ref={provided.innerRef} {...provided.droppableProps}>
+                        <Draggable draggableId="element" index={5}>
+                        {(provided) => <h1 ref={provided.innerRef} {...provided.draggableProps} {...provided.dragHandleProps}>idea1</h1>}
+                        </Draggable>
+                    </div>}
+                </Droppable>
+                </DragDropContext>
             </div>
         </>
     );

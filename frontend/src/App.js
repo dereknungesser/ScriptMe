@@ -9,11 +9,12 @@ import TextEditor from "./components/TextEditor/TextEditor"
 import Homeview from "./components/Homeview/Homeview"
 import Projects from "./components/Projects/Projects"
 import CharacterGenerator from "./components/CharacterGenerator/CharacterGenerator"
-import IdeasWeb from "./components/IdeasWeb/IdeasWeb"
+import IdeasWeb from "./components/IdeasWeb/IdeasWeb.js"
 
 function App() {
   const dispatch = useDispatch();
   const [isLoaded, setIsLoaded] = useState(false);
+
   useEffect(() => {
     dispatch(sessionActions.restoreUser()).then(() => setIsLoaded(true));
   }, [dispatch]);
