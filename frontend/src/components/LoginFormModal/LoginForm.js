@@ -46,6 +46,13 @@ function LoginForm() {
             required
           />
         </label>
+        <button
+            type='submit'
+            onClick={() => {
+              setCredential('demo@user.io')
+              setPassword('password')
+            }}
+          > Demo </button>
         <button className="navbar_buttons" type="submit">Log In</button>
       </form>
     </>

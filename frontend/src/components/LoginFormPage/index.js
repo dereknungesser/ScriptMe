@@ -49,8 +49,15 @@ function LoginFormPage() {
             required
           />
         </label>
-        <button type="submit">Log In</button>
+        <button type="submit">Demo</button>
       </form>
+        <button
+            type='submit'
+            onClick={() => {
+              setCredential('demo@aa.io')
+              setPassword('password')
+            }}
+          > Demo </button>
     </>
   );
 }
