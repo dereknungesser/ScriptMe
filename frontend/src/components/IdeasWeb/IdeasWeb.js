@@ -1,9 +1,18 @@
-import React from "react";
+import React, { useState } from "react";
 import { Draggable, DragDropContext, Droppable } from 'react-beautiful-dnd';
 import './IdeasWeb.css';
 
 function IdeasWeb() {
 
+    const ideas = [
+        {
+            idea1: "",
+            idea2: "",
+            idea3: "",
+            idea4: "",
+            idea5: ""
+        }
+    ]
 
 
     return (
