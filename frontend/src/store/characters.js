@@ -8,9 +8,9 @@ const addNewCharacter = character => ({
   payload: character
 });
 
-const getAllCharacters = characterList => ({
+const getAllCharacters = characters => ({
   type: GET_CHARACTER,
-  payload: characterList
+  payload: characters
 })
 
 
@@ -40,7 +40,7 @@ export const getCharacters = () => async (dispatch) => {
 }
 
 
-const initialState = { character: null };
+const initialState = { characters: {} };
 
 function reducer(state = initialState, action) {
   let newState;
@@ -49,7 +49,7 @@ function reducer(state = initialState, action) {
       newState = Object.assign({}, state, { character: action.payload });
       return newState;
     case GET_CHARACTER:
-      newState = Object.assign({}, state, { character: action.payload });
+      newState = Object.assign({}, state, { characters: action.payload });
       return newState;
     default:
       return state;

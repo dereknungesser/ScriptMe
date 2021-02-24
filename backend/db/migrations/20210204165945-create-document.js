@@ -21,7 +21,6 @@ module.exports = {
       },
       projectId: {
         type: Sequelize.INTEGER,
-        allowNull: false,
         references: { model: "Projects" }
       },
       createdAt: {
