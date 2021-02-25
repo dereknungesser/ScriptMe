@@ -5,9 +5,9 @@ const { restoreUser } = require('../../utils/auth');
 const { Character, User } = require('../../db/models')
 
 router.post('/', restoreUser, async (req, res, next) => {
-    const { name, age, location, bio, imageUrl } = req.body
+    const { userId, name, age, location, bio, imageUrl } = req.body
     try {
-      const character = await Character.create({ name, age, location, bio, imageUrl })
+      const character = await Character.create({ userId, name, age, location, bio, imageUrl })
       const newCharacter = await Character.findByPk(character.id, {include: [User]})
       res.json(newCharacter)
     } catch (e) {

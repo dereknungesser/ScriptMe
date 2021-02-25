@@ -1,3 +1,17 @@
 .title {
-    color: ghostwhite
+    color: ghostwhite;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+.splashy {
+    border: 1px solid ghostwhite;
+    max-width: 600px;
+    justify-content: center;
+}
+
+.splashy > li {
+    color: ghostwhite;
+    size: 22px;
+    font-family:'Courier New', Courier, monospace;
+    padding: 15px;
 }

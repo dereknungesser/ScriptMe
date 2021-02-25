@@ -8,7 +8,7 @@ router.post('/', restoreUser, async (req, res, next) => {
     const { userId, document_name, document_body, projectId } = req.body
     try {
       const document = await Document.create({userId, document_name, document_body, projectId})
-      const newDocument = await Document.findByPk(project.id, {include: [Project]})
+      const newDocument = await Document.findByPk(document.id, {include: [Project]})
       res.json(newDocument)
     } catch (e) {
       next(e)

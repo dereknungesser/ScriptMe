@@ -1,10 +1,18 @@
 .tag {
     color: ghostwhite;
+    font-family: 'Courier New', Courier, monospace;
 }
 
 .character-image {
-    width: 250px;
+    height: 75px;
+    width: 75px;
     height: auto;
+    width: auto\9;
+    border-radius: 50%;
+    display: table-cell;
+    margin: auto;
+    vertical-align: middle;
+    align-items: center;
 }
 
 td {
@@ -15,10 +23,89 @@ td {
     font-family: 'Courier New', Courier, monospace;
 }
 
+.name {
+    width: 100px;
+}
+
+.age {
+    width: 35px;
+}
+
+.location {
+    width: 100px;
+}
+
+.img_container {
+    width: 100px;
+    height: 100px;
+}
+
+.create_title {
+    color: ghostwhite;
+    font-family: 'Courier New', Courier, monospace;
+}
+
 .character-table {
     margin-top: 25px;
+    width: 100%;
 }
 
 .title {
     margin-top: 100px;
+}
+
+.tag_input {
+    width: 250px;
+    height: 25px;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 16px;
+}
+
+.tag_input_bio {
+    width: 250px;
+    height: 100px;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 16px;
+    resize: none;
+    margin-bottom: 25px;
+}
+
+.character_generator_fields {
+    margin-top: 25px;
+}
+
+.character_generator_fields > form {
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+    align-items: center;
+    border: 2px solid ghostwhite;
+    max-width: 300px;
+}
+
+.save_button {
+    text-decoration: none;
+    background-color: #F6F6FC;
+    border: none;
+    color: black;
+    height: 30px;
+    font-family: 'Courier New', Courier, monospace;
+    text-align: center;
+    font-size: 16px;
+    margin-bottom: 25px;
+    cursor: pointer;
+}
+
+.save_button_gen {
+    text-decoration: none;
+    background-color: #F6F6FC;
+    border: none;
+    color: black;
+    height: 30px;
+    font-family: 'Courier New', Courier, monospace;
+    text-align: center;
+    font-size: 16px;
+    margin-bottom: 25px;
+    margin-top: 25px;
+    cursor: pointer;
 }

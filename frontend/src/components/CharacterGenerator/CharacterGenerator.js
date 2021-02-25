@@ -27,6 +27,7 @@ function CharacterGenerator() {
       e.preventDefault();
 
       const payload = {
+        userId,
         name,
         age,
         location,
@@ -55,31 +56,42 @@ function CharacterGenerator() {
     return (
         loaded && (
             <div className="character_generator_fields">
+                <h1 className="create_title">Create a Character</h1>
                 <form onSubmit={handleSubmit}>
                     <h3 className="tag">Name</h3>
                     <input
+                        className="tag_input"
                         placeholder="Name"
                         onChange={(e) => {
                             setName(e.target.value)}} />
                     <h3 className="tag">Age</h3>
                     <input
+                        className="tag_input"
                         placeholder="Age"
                         onChange={(e) => {
                             setAge(e.target.value)}} />
                     <h3 className="tag">Location</h3>
                     <input
+                        className="tag_input"
                         placeholder="Location"
                         onChange={(e) => {
                             setLocation(e.target.value)}} />
+                    <h3 className="tag">Image URL</h3>
+                    <input
+                        className="tag_input"
+                        placeholder="*must be image from web"
+                        onChange={(e) => {
+                            setImageUrl(e.target.value)}} />
                     <h3 className="tag">Bio</h3>
                     <textarea
+                        className="tag_input_bio"
                         placeholder="Bio"
                         onChange={(e) => {
                             setBio(e.target.value)}} />
-                    <button type="submit">Save</button>
+                    <button className="save_button" type="submit">Save Character</button>
                 </form>
                 <form onSubmit={handleGenerate}>
-                    <button type="submit">Generate Character</button>
+                    <button className="save_button_gen" type="submit">Generate Character</button>
                 </form>
                 <div>
                     <h1 className="title">Saved Characters</h1>
@@ -87,19 +99,21 @@ function CharacterGenerator() {
                         <>
                             <table className="character-table">
                                 <tr className="row-container">
-                                    <td>
-                                        <img className="character-image"src={imageUrl} alt=''/>
+                                    <td className="img_container">
+                                        <div className="img_container">
+                                            <img className="character-image"src={imageUrl} alt=''/>
+                                        </div>
                                     </td>
-                                    <td>
+                                    <td className="name">
                                         {name}
                                     </td>
-                                    <td>
+                                    <td className="age">
                                         {age}
                                     </td>
-                                    <td>
+                                    <td className="location">
                                         {location}
                                     </td>
-                                    <td>
+                                    <td className="bio">
                                         {bio}
                                     </td>
                                 </tr>

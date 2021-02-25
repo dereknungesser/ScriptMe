@@ -28,7 +28,7 @@ function IdeasWeb() {
                 <Droppable droppableId="outer">
                     {(provided) => <div ref={provided.innerRef} {...provided.droppableProps}>
                         <Draggable draggableId="element" index={5}>
-                        {(provided) => <h1 ref={provided.innerRef} {...provided.draggableProps} {...provided.dragHandleProps}>idea1</h1>}
+                        {(provided) => <h1 ref={provided.innerRef} {...provided.draggableProps} {...provided.dragHandleProps}>{ideas}</h1>}
                         </Draggable>
                     </div>}
                 </Droppable>
