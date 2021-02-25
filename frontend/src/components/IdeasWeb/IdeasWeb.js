@@ -6,13 +6,37 @@ function IdeasWeb() {
 
     const ideas = [
         {
-            idea1: "",
-            idea2: "",
-            idea3: "",
-            idea4: "",
-            idea5: ""
-        }
+            id: "idea1",
+            idea: "Idea One"
+        },
+        {
+            id: "idea2",
+            idea: "Idea Two"
+        },
+        {
+            id: "idea3",
+            idea: "Idea Three"
+        },
+        {
+            id: "idea4",
+            idea: "Idea Four"
+        },
+        {
+            id: "idea5",
+            idea: "Idea Five"
+        },
+
     ]
+
+    const [ideasWeb, updateIdeasWeb] = useState(ideas)
+
+    function handleOnDragEnd(result) {
+        const items = Array.from(ideas);
+        const [reorderedItem] = items.splice(result.source.index, 1);
+        items.splice(result.destination.index, 0, reorderedItem)
+
+        updateIdeasWeb(items)
+    }
 
 
     return (
@@ -24,12 +48,26 @@ function IdeasWeb() {
                 </form>
             </div>
             <div className="drag-and-drop">
-                <DragDropContext onDragEnd={(result) => console.log(result)}>
+                <DragDropContext onDragEnd={handleOnDragEnd}>
                 <Droppable droppableId="outer">
-                    {(provided) => <div ref={provided.innerRef} {...provided.droppableProps}>
-                        <Draggable draggableId="element" index={5}>
+                {(provided) =>
+                    <div ref={provided.innerRef} {...provided.droppableProps}>
+                        {ideasWeb.map(({id, idea}, index) => {
+                            return (
+                                <Draggable key={id} draggableId={id} index={index}>
+                                    {(provided) => (
+                                        <li ref={provided.innerRef} {...provided.draggableProps} {...provided.dragHandleProps}>
+                                            <div className="ideas">
+                                                <h2 className="idea_drag">{idea}</h2>
+                                            </div>
+                                        </li>
+                                    )}
+                                </Draggable>
+                            )
+                        })}
+                        {/* <Draggable draggableId="element" index={5}>
                         {(provided) => <h1 ref={provided.innerRef} {...provided.draggableProps} {...provided.dragHandleProps}>{ideas}</h1>}
-                        </Draggable>
+                        </Draggable> */}
                     </div>}
                 </Droppable>
                 </DragDropContext>

@@ -1,3 +1,7 @@
 .drag-and-drop {
-    border: 5px solid black
+}
+
+.idea_drag {
+    border: 5px solid black;
+    width: 200px;
 }
