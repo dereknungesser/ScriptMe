@@ -56,11 +56,11 @@ function IdeasWeb() {
                             return (
                                 <Draggable key={id} draggableId={id} index={index}>
                                     {(provided) => (
-                                        <li ref={provided.innerRef} {...provided.draggableProps} {...provided.dragHandleProps}>
+                                        <h3 ref={provided.innerRef} {...provided.draggableProps} {...provided.dragHandleProps}>
                                             <div className="ideas">
                                                 <h2 className="idea_drag">{idea}</h2>
                                             </div>
-                                        </li>
+                                        </h3>
                                     )}
                                 </Draggable>
                             )
