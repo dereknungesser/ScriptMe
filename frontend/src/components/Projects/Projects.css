@@ -1,6 +1,7 @@
 .each-project {
-    color:blanchedalmond;
-    border: 1px solid whitesmoke;
+    color: black;
+    background-color:whitesmoke;
+    border: 1px solid black;
     padding: 5px;
     width: 50%;
     font-size: 22px;

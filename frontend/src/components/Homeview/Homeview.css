@@ -3,6 +3,28 @@
     font-family: 'Courier New', Courier, monospace;
 }
 
+.nolog-container {
+    margin: auto;
+    width: 60%;
+    border: 2px solid whitesmoke;
+    padding: 25px;
+}
+
+.derek {
+    color:whitesmoke;
+}
+
+.nolog-title {
+    color: whitesmoke;
+    font-size: 32pt;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+.nolog-text {
+    color: whitesmoke;
+    font-family: 'Courier New', Courier, monospace;
+}
+
 .splashy {
     border: 1px solid ghostwhite;
     max-width: 600px;

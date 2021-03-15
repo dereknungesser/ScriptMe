@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { useHistory } from "react-router-dom";
+import { useHistory, Link } from "react-router-dom";
 import './Projects.css';
 import { addProject, getProject } from "../../store/project"
 import * as projectActions from "../../store/project"
@@ -20,6 +20,10 @@ function Projects() {
     useEffect(() => {
         dispatch(getProject());
     }, [dispatch])
+
+    function handleProjectClick() {
+
+    }
 
     const handleSubmit = (e) => {
         e.preventDefault();
@@ -48,9 +52,9 @@ console.log("NAME:", projects)
             </form>
             <div className="project-container">
                 {projects && (projects.map(({project_name}) => (
-                        <div className="each-project">
+                        <button onClick={handleProjectClick} className="each-project">
                             {project_name}
-                        </div>
+                        </button>
                     ))
                 )}
             </div>

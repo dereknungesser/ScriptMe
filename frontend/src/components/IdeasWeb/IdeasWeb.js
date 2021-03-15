@@ -42,9 +42,10 @@ function IdeasWeb() {
     return (
         <>
             <div>
+                <h1 className="ideas-title">Ideas Web</h1>
                 <form>
-                    <input placeholder="New Idea Here..."></input>
-                    <button>New Idea</button>
+                    <input className="new-idea-input" placeholder="New Idea Here..."></input>
+                    <button className="new-idea"> + </button>
                 </form>
             </div>
             <div className="drag-and-drop">
