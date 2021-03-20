@@ -1,6 +1,6 @@
 
-[Created By Derek Nungesser][nungesser.net]
-[Connect with me on LinkedIn!][https://www.linkedin.com/in/nungesser94/]
+## Created By Derek Nungesser
+<a href="https://www.linkedin.com/in/nungesser94/"><strong>Connect on LinkedIn »</strong></a>
 
 
 
